@@ -5,8 +5,8 @@ import { EmbedBuilder } from "discord.js";
 const USERNAME = "aakarimutyam";
 
 // Twitch API Credentials
-const TWITCH_CLIENT_ID = "YOUR_TWITCH_CLIENT_ID";
-const TWITCH_CLIENT_SECRET = "YOUR_TWITCH_CLIENT_SECRET";
+const TWITCH_CLIENT_ID = "b5j9u9ih2uw9vc8siv0h4p4upuhf5p";
+const TWITCH_CLIENT_SECRET = "p0tz8qwc7z1ocnxehkqb4p94xycqvr";
 let twitchAccessToken = null;
 
 // YouTube API Credential
