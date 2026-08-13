@@ -1,4 +1,4 @@
-import movies from "../../data/games/movies.json" assert { type: "json" };
+import movies from "../../../data/games/movie/movies.json" with { type: "json" };
 
 const userGuesses = new Map();
 

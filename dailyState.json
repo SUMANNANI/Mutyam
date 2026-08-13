@@ -1,0 +1,26 @@
+{
+  "round": 1,
+  "movie": {
+    "title": "The Fountain",
+    "genre": "Drama, Mystery, Romance",
+    "released": "2006",
+    "runtime": "97 min",
+    "plot1": "As a modern-day scientist, Tommy is struggling with mortality, desperately searching for the",
+    "plot2": "medical breakthrough that will save the life of his cancer-stricken wife, Izzi.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTU5OTczMTcxMV5BMl5BanBnXkFtZTcwNDg3MTEzMw@@._V1_SX300.jpg",
+    "blurred_heavy": "https://wsrv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTU5OTczMTcxMV5BMl5BanBnXkFtZTcwNDg3MTEzMw%40%40._V1_SX300.jpg&blur=12&output=jpg",
+    "blurred_light": "https://wsrv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTU5OTczMTcxMV5BMl5BanBnXkFtZTcwNDg3MTEzMw%40%40._V1_SX300.jpg&blur=5&output=jpg"
+  },
+  "tried": [
+    "1082251352337551400"
+  ],
+  "correct": [],
+  "firstWinner": null,
+  "firstWinnerTimestamp": null,
+  "startUnix": 1786336537,
+  "hint1Unix": 1786350600,
+  "hint2Unix": 1786372200,
+  "stage": 1,
+  "lastPostDate": "2026-08-10",
+  "messageId": "1536231531436183565"
+}

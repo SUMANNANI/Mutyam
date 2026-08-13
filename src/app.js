@@ -1,3 +1,4 @@
+import { initDailyGuess } from "./services/dailyGuess.js";
 ﻿import 'dotenv/config';
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import { REST } from '@discordjs/rest';
