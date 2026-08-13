@@ -1,15 +1,15 @@
 {
-  "round": 1,
+  "round": 2,
   "movie": {
-    "title": "The Fountain",
-    "genre": "Drama, Mystery, Romance",
-    "released": "2006",
-    "runtime": "97 min",
-    "plot1": "As a modern-day scientist, Tommy is struggling with mortality, desperately searching for the",
-    "plot2": "medical breakthrough that will save the life of his cancer-stricken wife, Izzi.",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMTU5OTczMTcxMV5BMl5BanBnXkFtZTcwNDg3MTEzMw@@._V1_SX300.jpg",
-    "blurred_heavy": "https://wsrv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTU5OTczMTcxMV5BMl5BanBnXkFtZTcwNDg3MTEzMw%40%40._V1_SX300.jpg&blur=12&output=jpg",
-    "blurred_light": "https://wsrv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BMTU5OTczMTcxMV5BMl5BanBnXkFtZTcwNDg3MTEzMw%40%40._V1_SX300.jpg&blur=5&output=jpg"
+    "title": "The Godfather",
+    "genre": "Crime, Drama",
+    "released": "1972",
+    "runtime": "175 min",
+    "plot1": "The aging patriarch of an organized crime dynasty transfers",
+    "plot2": "control of his clandestine empire to his reluctant son.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_QL75_UY562_CR8,0,380,562_.jpg",
+    "blurred_heavy": "https://wsrv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc%40._V1_QL75_UY562_CR8%2C0%2C380%2C562_.jpg&blur=12&output=jpg",
+    "blurred_light": "https://wsrv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc%40._V1_QL75_UY562_CR8%2C0%2C380%2C562_.jpg&blur=5&output=jpg"
   },
   "tried": [
     "1082251352337551400"
@@ -17,10 +17,10 @@
   "correct": [],
   "firstWinner": null,
   "firstWinnerTimestamp": null,
-  "startUnix": 1786336537,
-  "hint1Unix": 1786350600,
-  "hint2Unix": 1786372200,
+  "startUnix": 1786651540,
+  "hint1Unix": 1786696200,
+  "hint2Unix": 1786717800,
   "stage": 1,
-  "lastPostDate": "2026-08-10",
-  "messageId": "1536231531436183565"
+  "lastPostDate": "2026-08-13",
+  "messageId": "1537552728774025257"
 }

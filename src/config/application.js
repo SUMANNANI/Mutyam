@@ -2,7 +2,7 @@ import { fileURLToPath } from "url";
 import path from "path";
 import botConfig, { validateConfig } from "./bot.js";
 import { shopConfig as shop } from "./shop/index.js";
-import { pgConfig } from "./database/postgres.js";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -22,7 +22,6 @@ const appConfig = {
     ...botConfig,
     token: process.env.DISCORD_TOKEN || process.env.TOKEN,
     clientId: process.env.CLIENT_ID,
-    // Retained for tutorial/setup compatibility; not used for command registration.
     guildId: process.env.GUILD_ID,
 
     shop: {
@@ -31,9 +30,13 @@ const appConfig = {
     },
   },
 
-  // PostgreSQL configuration - Primary production database
+  // SQLite Fallback for Local Development
   postgresql: {
-    ...pgConfig,
+    host: process.env.POSTGRES_HOST || "localhost",
+    port: process.env.POSTGRES_PORT || 5432,
+    database: process.env.POSTGRES_DB || "titanbot",
+    user: process.env.POSTGRES_USER || "postgres",
+    password: process.env.POSTGRES_PASSWORD || "postgres",
   },
 
   logging: {

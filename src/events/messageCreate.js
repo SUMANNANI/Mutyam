@@ -1,5 +1,5 @@
 import { handleCounting } from "../games/counting.js";
-import { handleXP } from "../games/xpSystem.js";
+// import { handleXP } from "../games/xpSystem.js"; // Disabled until xpSystem.js is created
 import { execute as executeGuess } from "../commands/guess.js";
 import { getHelpData } from "../commands/help.js";
 import { EmbedBuilder } from "discord.js";
@@ -12,8 +12,8 @@ export default {
   async execute(message, client) {
     if (message.author.bot || !message.guild) return;
 
-    // 1. Level XP Engine
-    await handleXP(message);
+    // 1. Level XP Engine (Temporarily Disabled)
+    // await handleXP(message);
 
     // 2. Counting Game Engine
     await handleCounting(message);

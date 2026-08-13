@@ -15,12 +15,12 @@ function getSubcommandInfo(commandData) {
     
     if (commandData.options) {
         for (const option of commandData.options) {
-if (option.type === 1) {
+            if (option.type === 1) {
                 subcommands.push(option.name);
-} else if (option.type === 2) {
+            } else if (option.type === 2) {
                 if (option.options) {
                     for (const subOption of option.options) {
-if (subOption.type === 1) {
+                        if (subOption.type === 1) {
                             subcommands.push(`${option.name}/${subOption.name}`);
                         }
                     }
@@ -69,13 +69,18 @@ export async function loadCommands(client) {
             const category = path.basename(commandDir);
             
             const commandModule = await import(`file://${filePath}`);
-            const command = commandModule.default || commandModule;
+            let command = commandModule.default || commandModule;
             
-            if (!command.data || !command.execute) {
+            if (!command || !command.data || !command.execute) {
                 logger.warn(`Command at ${filePath} is missing required "data" or "execute" property.`);
                 continue;
             }
             
+            // Fix: Check if object is extensible (frozen/sealed). If frozen, create a mutable copy.
+            if (Object.isFrozen(command) || !Object.isExtensible(command)) {
+                command = { ...command };
+            }
+
             command.category = category;
             command.filePath = normalizedPath;
             
@@ -92,7 +97,7 @@ export async function loadCommands(client) {
             logger.info(`Loaded command: ${primaryCommandName} from ${normalizedPath} (category: ${category})`);
             
             if (subcommands.length > 0) {
-                logger.info(`  - Subcommands: ${subcommands.join(', ')}`);
+                logger.info(`   - Subcommands: ${subcommands.join(', ')}`);
             }
             
         } catch (error) {
@@ -216,7 +221,7 @@ function validateCommands(commands) {
 
     if (validationErrors.length > 0) {
         logger.error('Command validation failed. Errors:');
-        validationErrors.forEach((error) => logger.error(`  - ${error}`));
+        validationErrors.forEach((error) => logger.error(`   - ${error}`));
         throw new Error(`Command validation failed with ${validationErrors.length} errors`);
     }
 }
@@ -287,7 +292,11 @@ export async function reloadCommand(client, commandName) {
         const moduleUrl = pathToFileURL(commandPath);
         moduleUrl.searchParams.set('t', Date.now().toString());
 
-        const newCommand = (await import(moduleUrl.href)).default;
+        let newCommand = (await import(moduleUrl.href)).default;
+        
+        if (Object.isFrozen(newCommand) || !Object.isExtensible(newCommand)) {
+            newCommand = { ...newCommand };
+        }
         
         client.commands.set(commandName, newCommand);
         
