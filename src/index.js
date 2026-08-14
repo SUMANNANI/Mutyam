@@ -1,3 +1,4 @@
+import { initMemePoster } from './src/services/memes.js'; // Adjust path if your folder structure is different
 import "dotenv/config";
 import { Client, GatewayIntentBits, Collection } from "discord.js";
 import fs from "fs";
@@ -8,7 +9,7 @@ import interactionCreate from "./events/interactionCreate.js";
 import { initDailyGuess } from "./services/dailyGuess.js";
 import { initLiveNotifier } from "./services/liveNotifier.js";
 import { initFreeGamesNotifier } from "./services/freeGames.js";
-import { initMemePoster } from "./services/memes.js"; // 1. Imported Meme Poster Service
+import { initMemePoster } from "./services/memes.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -65,7 +66,7 @@ client.once("ready", async () => {
     // optional service fallback
   }
 
-  // Initialize Live Stream Notifier Service
+  // Initialize Live Stream Notifier Service (#live-stream)
   try {
     const LIVE_STREAM_CHANNEL_ID = "1532265565668773989";
     initLiveNotifier(client, LIVE_STREAM_CHANNEL_ID);
@@ -73,7 +74,7 @@ client.once("ready", async () => {
     console.error("[!] Error initializing Live Notifier:", err);
   }
 
-  // Initialize Free Games Notifier Service
+  // Initialize Free Games Notifier Service (#free-games)
   try {
     const FREE_GAMES_CHANNEL_ID = "1524500877661175828";
     initFreeGamesNotifier(client, FREE_GAMES_CHANNEL_ID);
@@ -81,9 +82,9 @@ client.once("ready", async () => {
     console.error("[!] Error initializing Free Games Notifier:", err);
   }
 
-  // Initialize Meme Poster Service
+  // Initialize Meme Poster Service (#memes)
   try {
-    const MEMES_CHANNEL_ID = "1506493106663723029"; // Your #memes channel ID
+    const MEMES_CHANNEL_ID = "1506493106663723029";
     initMemePoster(client, MEMES_CHANNEL_ID);
   } catch (err) {
     console.error("[!] Error initializing Meme Poster:", err);
